@@ -1,22 +1,22 @@
 import React from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
-import asyncComponent from "util/asyncComponent";
+import { BrowserRouter, Route } from "react-router-dom";
 
-const App = ({ match }) => (
-  <div className="gx-main-content-wrapper">
-    <Switch>
-      <Route
-        path={`${match.url}dashboard`}
-        component={asyncComponent(() => import("./Dashboard"))}
-      />
-      {/* <Route path={`${match.url}/chat`} component={asyncComponent(() => import('./Chat'))} /> */}
+import Register from './Register';
+import Login from './Login';
+import PostList from './PostList';
 
-      <Route path="/chat" component={asyncComponent(() => import("./Chat"))} />
-      <Route path="/my-account" component={asyncComponent(() => import("./socialApps/Profile"))} />
-      <Route path="/404" component={asyncComponent(() => import("./404"))} />
-      <Redirect from="*" to="/404" />
-    </Switch>
-  </div>
-);
+class App extends React.Component {
+  render() {
+    return (
+      <div className="gx-main-content-wrapper">
+        <BrowserRouter>
+          <Route exact path="/" component={Login} />
+          <Route path="/register" component={Register} />
+          <Route path="/post-list" component={PostList} />
+          {/* <Redirect from="*" to="/404" /> */}
+        </BrowserRouter>
+      </div>)
+  }
+}
 
 export default App;

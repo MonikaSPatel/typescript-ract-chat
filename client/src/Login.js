@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import { Link } from "react-router-dom";
 
 class Login extends React.Component {
     handleSubmit = e => {
@@ -47,14 +48,15 @@ class Login extends React.Component {
                     <Button type="primary" htmlType="submit" className="login-form-button">
                         Log in
           </Button>
-                    Or <a href="">register now!</a>
+                    Or <Link to="register">register now!</Link>
+                    Or <Link to="post-list">Post List</Link>
                 </Form.Item>
             </Form>
         );
     }
 }
 
- const WrappedLogin = Form.create({ name: 'normal_login' })(Login);
+const WrappedLogin = Form.create({ name: 'normal_login' })(Login);
 
 // ReactDOM.render(<WrappedLogin />, mountNode);
 
