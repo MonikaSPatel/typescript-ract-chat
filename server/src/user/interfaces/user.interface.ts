@@ -1,6 +1,6 @@
 import { Document } from 'mongoose';
 
-export interface Customer extends Document {
+export interface User extends Document {
     readonly email: string;
     readonly password: string;
     readonly created_at: Date;

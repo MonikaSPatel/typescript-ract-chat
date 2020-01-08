@@ -49,7 +49,6 @@ class Login extends React.Component {
                         Log in
           </Button>
                     Or <Link to="register">register now!</Link>
-                    Or <Link to="post-list">Post List</Link>
                 </Form.Item>
             </Form>
         );

@@ -1,5 +1,5 @@
 import { Controller, Res,  Post, Body } from '@nestjs/common';
-import { CustomerService } from '../customer/customer.service';
+import { CustomerService } from '../user/user.service';
 import { LoginDTO } from './dto/login.dto';
 @Controller('auth')
 export class CustomerController {
